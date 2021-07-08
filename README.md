@@ -4,7 +4,7 @@
 
 ```shell
 # 基础包安装
-sudo apt-get install vim curl openssh-server zsh libssl-dev zsh gcc g++ make automake autoconf gdb ibus-rime
+sudo apt-get install vim curl openssh-server zsh libssl-dev zsh gcc g++ make automake autoconf gdb ibus-rime ninja-build
 
 # 安装llvm套装
 sudo apt-get install clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python-clang
@@ -34,19 +34,19 @@ set wrapmargin=2
 set scrolloff=5
 set sidescrolloff=15
 set laststatus=2
-set  ruler
+set ruler
 set showmatch
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-set spell spelllang=en_us
 set nobackup
 set noswapfile
 set noerrorbells
 set wildmenu
 set wildmode=longest:list,full
 ```
+
 ## Linux环境变量配置
 
 ```text
@@ -143,14 +143,15 @@ patch:
 1. 配置IntelliJ IDEA Ultimate
 
 ```shell
-pushd plugins
 sudo rm -rf android android-gradle-dsl smali AngularJS devkit jsr45debug less sass space spy-js stylus tslint w3validators xpath xslt-debugger featuresTrainer ant Glassfish Jetty Tomcat weblogicIntegration webSphereIntegration RefactorX coffeescript-core JavaScriptDebugger NodeJS JSIntentionPowerPack drools JSF javaFX SpringOSGi SpringWebflow EJB uiDesigner FreeMarker haml thymeleaf Velocity lombok github svn4idea
-popd
 ```
 
 2. 配置Clion
 ```shell
-pushd plugins
 sudo rm -rf coffeescript-core CSS github htmltools JavaScriptDebugger JavaScriptLanguage JSIntentionPowerPack less PerforceIntegration sass stylus svn4idea tslint xpath
-popd
+```
+
+3. 配置Goland
+```shell
+sudo rm -rf htmltools RefactorX JavaScriptDebugger JavaScriptLanguage JSIntentionPowerPack/ tslint CSS github featuresTrainer
 ```
