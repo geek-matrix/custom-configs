@@ -145,7 +145,7 @@ patch:
 1. 配置IntelliJ IDEA Ultimate
 
 ```shell
-sudo rm -rf android android-gradle-dsl smali AngularJS devkit less sass space spy-js stylus tslint w3validators xpath xslt-debugger featuresTrainer ant Glassfish Jetty Tomcat weblogicIntegration webSphereIntegration RefactorX JavaScriptDebugger NodeJS JSIntentionPowerPack JSF javaFX uiDesigner FreeMarker haml thymeleaf Velocity lombok github svn4idea
+sudo rm -rf android android-gradle-dsl smali AngularJS devkit less sass space spy-js stylus tslint w3validators xpath xslt-debugger featuresTrainer ant Glassfish Jetty Tomcat weblogicIntegration webSphereIntegration RefactorX JavaScriptDebugger NodeJS JSIntentionPowerPack JSF javaFX uiDesigner FreeMarker haml thymeleaf Velocity lombok github svn4idea vcs-git-featuresTrainer
 ```
 
 2. 配置Clion
