@@ -4,7 +4,7 @@
 
 ```shell
 # 基础包安装
-sudo apt-get install vim curl openssh-server zsh libssl-dev zsh gcc g++ make automake autoconf gdb ibus-rime ninja-build
+sudo apt-get install vim curl openssh-server zsh libssl-dev gcc g++ make automake autoconf ibus-rime ninja-build libtool
 
 # 安装llvm套装
 sudo apt-get install clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python-clang
