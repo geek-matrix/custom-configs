@@ -4,7 +4,7 @@
 
 ```shell
 # 基础包安装
-sudo apt-get install vim curl openssh-server zsh libssl-dev gcc g++ make automake autoconf ibus-rime ninja-build libtool python
+sudo apt-get install vim curl openssh-server zsh libssl-dev gcc g++ make automake autoconf ibus-rime ninja-build libtool gdb
 
 # 安装llvm套装
 sudo apt-get install clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python-clang
@@ -57,7 +57,6 @@ PATH=$PATH:$JAVA_HOME/bin:$GOROOT/bin
 export PATH JAVA_HOME GOROOT
 
 # vim ~/.profile
-KOTLIN_HOME=/opt/kotlin
 SCALA_HOME=/opt/scala
 GROOVY_HOME=/opt/groovy
 NODE_HOME=/opt/node
@@ -66,8 +65,8 @@ M2_HOME=/opt/maven
 GRADLE_HOME=/opt/gradle
 VISUALVM=/opt/visualvm
 JMETER=/opt/jmeter
-PATH=$PATH:$KOTLIN_HOME/bin:$SCALA_HOME/bin:$GROOVY_HOME/bin:$NODE_HOME/bin:$ANT_HOME/bin:$M2_HOME/bin:$GRADLE_HOME/bin:$VISUALVM/bin:$JMETER/bin
-export PATH KOTLIN_HOME SCALA_HOME GROOVY_HOME NODE_HOME ANT_HOME M2_HOME GRADLE_HOME VISUALVM JMETER
+PATH=$PATH:$SCALA_HOME/bin:$GROOVY_HOME/bin:$NODE_HOME/bin:$ANT_HOME/bin:$M2_HOME/bin:$GRADLE_HOME/bin:$VISUALVM/bin:$JMETER/bin
+export PATH SCALA_HOME GROOVY_HOME NODE_HOME ANT_HOME M2_HOME GRADLE_HOME VISUALVM JMETER
 ```
 
 ## Ubuntu安装git
