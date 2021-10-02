@@ -105,7 +105,7 @@ sudo gpasswd -a ${USER} wireshark
 1. [安装Docker CE](https://docs.docker.com/engine/install/ubuntu)
 2. 配置sudo如下
 ```shell
-sudo gpasswd -a ${USER} docker
+sudo usermod -aG docker $USER
 sudo systemctl restart docker
 newgrp docker
 ```
