@@ -44,4 +44,4 @@ KillMode=process
 OOMScoreAdjust=-500
 
 [Install]
-WantedBy=multi-user.targe
+WantedBy=multi-user.target
