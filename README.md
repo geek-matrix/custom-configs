@@ -51,7 +51,7 @@ set wildmode=longest:list,full
 
 ```text
 # sudo vim /etc/profile
-JAVA_HOME=/usr/local/java/jdk-11.0.12
+JAVA_HOME=/usr/local/java/jdk-11.0.13
 GOROOT=/usr/local/go
 PATH=$PATH:$JAVA_HOME/bin:$GOROOT/bin
 export PATH JAVA_HOME GOROOT
