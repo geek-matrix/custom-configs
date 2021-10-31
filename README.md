@@ -6,6 +6,9 @@
 # 基础包安装
 sudo apt-get install vim curl openssh-server zsh libssl-dev gcc g++ make automake autoconf ibus-rime ninja-build libtool gdb
 
+# 安装字体
+sudo apt install fonts-anonymous-pro fonts-cascadia-code fonts-courier-prime fonts-fantasque-sans fonts-firacode fonts-hack fonts-hermit fonts-inconsolata fonts-jetbrains-mono fonts-mona fonts-monapo fonts-monofur fonts-mononoki fonts-sil-andika fonts-freefont-ttf fonts-opendin fonts-open-sans fonts-gfs-bodoni-classic fonts-ebgaramond fonts-ebgaramond-extra fonts-freefont-ttf fonts-sil-gentium fonts-liberation fonts-liberation2 fonts-junicode fonts-mph-2b-damase fonts-wqy-microhei fonts-wqy-zenhei fonts-arphic-bkai00mp fonts-arphic-bsmi00lp fonts-arphic-gbsn00lp fonts-arphic-gkai00mp fonts-arphic-ukai fonts-arphic-uming fonts-noto-color-emoji fonts-symbola fonts-stix fonts-mathjax fonts-mathjax-extras
+
 # 安装llvm套装
 sudo apt-get install clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python-clang
 
