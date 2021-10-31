@@ -95,6 +95,14 @@ chsh -s $(which zsh)
 git clone git://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 vim ~/.zshrc
+
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+
+setopt nonomatch
 ```
 
 ## Ubuntu安装配置wireshark
