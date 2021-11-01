@@ -178,7 +178,7 @@ sudo rm -rf htmltools RefactorX JavaScriptDebugger JavaScriptLanguage JSIntentio
 1. 关闭nouveau
 
 ```
-vim /etc/modprobe.d/nvidia-blacklists-nouveau.conf
+sudo vim /etc/modprobe.d/nvidia-blacklists-nouveau.conf
 
 blacklist nouveau
 blacklist lbm-nouveau
@@ -186,7 +186,8 @@ options nouveau modeset=0
 alias nouveau off
 alias lbm-nouveau off
 
-update-initramfs -u &&  reboot
+sudo update-initramfs -u
+sudo reboot
 ```
 
 2. 安装Nvidia闭源
