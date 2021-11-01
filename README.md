@@ -172,3 +172,76 @@ sudo rm -rf coffeescript-core CSS github htmltools JavaScriptDebugger JavaScript
 ```shell
 sudo rm -rf htmltools RefactorX JavaScriptDebugger JavaScriptLanguage JSIntentionPowerPack/ tslint CSS github featuresTrainer
 ```
+
+## Debian安装配置Nvidia
+
+1. 关闭nouveau
+
+```
+vim /etc/modprobe.d/nvidia-blacklists-nouveau.conf
+
+blacklist nouveau
+blacklist lbm-nouveau
+options nouveau modeset=0
+alias nouveau off
+alias lbm-nouveau off
+
+update-initramfs -u &&  reboot
+```
+
+2. 安装Nvidia闭源
+
+```shell
+sudo apt install nvidia-driver firmware-misc-nonfree nvidia-kernel-dkms nvidia-xconfig
+```
+3. 查询pci
+
+```shell
+nvidia-xconfig --query-gpu-info
+```
+4. 配置xorg
+
+```shell
+# sudo vim /etc/X11/xorg.conf
+Section "ServerLayout"
+    Identifier "layout"
+    Screen 0 "nvidia"
+    Inactive "intel"
+EndSection
+ 
+Section "Device"
+    Identifier "nvidia"
+    Driver "nvidia"
+    BusID "PCI:1:0:0"
+EndSection
+ 
+Section "Screen"
+    Identifier "nvidia"
+    Device "nvidia"
+    Option "AllowEmptyInitialConfiguration"
+EndSection
+ 
+Section "Device"
+    Identifier "intel"
+    Driver "modesetting"
+EndSection
+ 
+Section "Screen"
+    Identifier "intel"
+    Device "intel"
+EndSection
+```
+
+5. 配置GDM
+
+```shell
+# 两个文件内容相同
+# sudo vim /usr/share/gdm/greeter/autostart/optimus.desktop
+# sudo vim /etc/xdg/autostart/optimus.desktop
+
+Type=Application
+Name=Optimus
+Exec=sh -c "xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"
+NoDisplay=true
+X-GNOME-Autostart-Phase=DisplayServer
+```
