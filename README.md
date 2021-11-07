@@ -177,7 +177,7 @@ sudo rm -rf htmltools RefactorX JavaScriptDebugger JavaScriptLanguage JSIntentio
 
 1. 关闭nouveau
 
-```
+```shell
 sudo vim /etc/modprobe.d/nvidia-blacklists-nouveau.conf
 
 blacklist nouveau
@@ -195,51 +195,42 @@ sudo reboot
 ```shell
 sudo apt install nvidia-driver firmware-misc-nonfree nvidia-kernel-dkms nvidia-xconfig
 ```
-3. 查询pci
+
+3. 配置xorg
 
 ```shell
-nvidia-xconfig --query-gpu-info
-```
-4. 配置xorg
-
-```shell
-# sudo vim /etc/X11/xorg.conf
-Section "ServerLayout"
-    Identifier "layout"
-    Screen 0 "nvidia"
-    Inactive "intel"
-EndSection
- 
-Section "Device"
-    Identifier "nvidia"
-    Driver "nvidia"
-    BusID "PCI:1:0:0"
-EndSection
- 
-Section "Screen"
-    Identifier "nvidia"
-    Device "nvidia"
-    Option "AllowEmptyInitialConfiguration"
-EndSection
- 
-Section "Device"
+# sudo vim /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
+Section "OutputClass"
     Identifier "intel"
+    MatchDriver "i915"
     Driver "modesetting"
 EndSection
- 
-Section "Screen"
-    Identifier "intel"
-    Device "intel"
+
+Section "OutputClass"
+    Identifier "nvidia"
+    MatchDriver "nvidia-drm"
+    Driver "nvidia"
+    Option "AllowEmptyInitialConfiguration"
+    Option "PrimaryGPU" "yes"
+    ModulePath "/usr/lib/nvidia/xorg"
+    ModulePath "/usr/lib/xorg/modules"
 EndSection
 ```
 
 5. 配置GDM
+```shell
+# vim ~/.xinitrc
+
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+```
 
 ```shell
 # 两个文件内容相同
 # sudo vim /usr/share/gdm/greeter/autostart/optimus.desktop
 # sudo vim /etc/xdg/autostart/optimus.desktop
 
+[Desktop Entry]
 Type=Application
 Name=Optimus
 Exec=sh -c "xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"
