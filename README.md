@@ -4,7 +4,7 @@
 
 ```shell
 # 基础包安装
-sudo apt install vim curl openssh-server zsh libssl-dev gcc g++ make automake autoconf ibus-rime ninja-build libtool gdb
+sudo apt install vim curl openssh-server zsh libssl-dev gcc g++ make automake autoconf ibus-rime ninja-build libtool gdb git intel-microcode
 
 # 安装字体
 sudo apt install fonts-anonymous-pro fonts-cascadia-code fonts-courier-prime fonts-fantasque-sans fonts-firacode fonts-hack fonts-hermit fonts-inconsolata fonts-jetbrains-mono fonts-mona fonts-monapo fonts-monofur fonts-mononoki fonts-sil-andika fonts-freefont-ttf fonts-opendin fonts-open-sans fonts-gfs-bodoni-classic fonts-ebgaramond fonts-ebgaramond-extra fonts-freefont-ttf fonts-sil-gentium fonts-liberation fonts-liberation2 fonts-junicode fonts-mph-2b-damase fonts-wqy-microhei fonts-wqy-zenhei fonts-arphic-bkai00mp fonts-arphic-bsmi00lp fonts-arphic-gbsn00lp fonts-arphic-gkai00mp fonts-arphic-ukai fonts-arphic-uming fonts-noto-color-emoji fonts-symbola fonts-stix fonts-mathjax fonts-mathjax-extras fonts-powerline
@@ -58,23 +58,19 @@ set wildmode=longest:list,full
 ## Linux环境变量配置
 
 ```text
-# sudo vim /etc/profile
-JAVA_HOME=/usr/local/java/jdk-11.0.13
-GOROOT=/usr/local/go
-PATH=$PATH:$JAVA_HOME/bin:$GOROOT/bin
-export PATH JAVA_HOME GOROOT
-
 # vim ~/.profile
-SCALA_HOME=/opt/scala
-GROOVY_HOME=/opt/groovy
-NODE_HOME=/opt/node
-ANT_HOME=/opt/ant
-M2_HOME=/opt/maven
-GRADLE_HOME=/opt/gradle
-VISUALVM=/opt/visualvm
-JMETER=/opt/jmeter
-PATH=$PATH:$SCALA_HOME/bin:$GROOVY_HOME/bin:$NODE_HOME/bin:$ANT_HOME/bin:$M2_HOME/bin:$GRADLE_HOME/bin:$VISUALVM/bin:$JMETER/bin
-export PATH SCALA_HOME GROOVY_HOME NODE_HOME ANT_HOME M2_HOME GRADLE_HOME VISUALVM JMETER
+JAVA_HOME=~/.softwares/java/jdk-11.0.13
+GOROOT=~/.softwares/go
+SCALA_HOME=~/.softwares/scala
+GROOVY_HOME=~/.softwares/groovy
+NODE_HOME=~/.softwares/node
+ANT_HOME=~/.softwares/ant
+M2_HOME=~/.softwares/maven
+GRADLE_HOME=~/.softwares/gradle
+VISUALVM=~/.softwares/visualvm
+JMETER=~/.softwares/jmeter
+PATH=$PATH:$JAVA_HOME/bin:$GOROOT/bin:$SCALA_HOME/bin:$GROOVY_HOME/bin:$NODE_HOME/bin:$ANT_HOME/bin:$M2_HOME/bin:$GRADLE_HOME/bin:$VISUALVM/bin:$JMETER/bin
+export PATH JAVA_HOME GOROOT SCALA_HOME GROOVY_HOME NODE_HOME ANT_HOME M2_HOME GRADLE_HOME VISUALVM JMETER
 ```
 
 ## Ubuntu安装git
@@ -109,7 +105,7 @@ setopt nonomatch
 
 ```shell
 # 安装wireshark
-sudo apt-get install wireshark
+sudo apt install wireshark
 # 配置权限
 sudo chgrp wireshark /usr/bin/dumpcap
 sudo chmod 4755 /usr/bin/dumpcap
