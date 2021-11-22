@@ -35,7 +35,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set softtabstop=2
-set number
+set nonumber
 set textwidth=120
 set nowrap
 set wrapmargin=2
