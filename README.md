@@ -156,17 +156,22 @@ patch:
 1. 配置IntelliJ IDEA Ultimate
 
 ```shell
-sudo rm -rf android android-gradle-dsl smali AngularJS devkit less sass space spy-js stylus tslint w3validators xpath xslt-debugger featuresTrainer ant Glassfish Jetty Tomcat weblogicIntegration webSphereIntegration RefactorX JavaScriptDebugger NodeJS JSIntentionPowerPack JSF javaFX uiDesigner FreeMarker haml thymeleaf Velocity lombok github svn4idea vcs-git-featuresTrainer
+rm -rf android android-gradle-dsl smali AngularJS devkit less sass space spy-js stylus tslint w3validators xpath xslt-debugger featuresTrainer ant Glassfish Jetty Tomcat weblogicIntegration webSphereIntegration RefactorX JavaScriptDebugger NodeJS JSIntentionPowerPack JSF javaFX uiDesigner FreeMarker haml thymeleaf Velocity lombok github svn4idea vcs-git-featuresTrainer
 ```
 
 2. 配置Clion
 ```shell
-sudo rm -rf coffeescript-core CSS github htmltools JavaScriptDebugger JavaScriptLanguage JSIntentionPowerPack less PerforceIntegration sass stylus svn4idea tslint xpath
+rm -rf coffeescript-core CSS github htmltools JavaScriptDebugger JavaScriptLanguage JSIntentionPowerPack less PerforceIntegration sass stylus svn4idea tslint xpath
 ```
 
 3. 配置Goland
 ```shell
-sudo rm -rf htmltools RefactorX JavaScriptDebugger JavaScriptLanguage JSIntentionPowerPack/ tslint CSS github featuresTrainer
+rm -rf htmltools RefactorX JavaScriptDebugger JavaScriptLanguage JSIntentionPowerPack/ tslint CSS github featuresTrainer
+```
+
+4. 配置idea community
+```shell
+rm -rf android android-gradle-dsl ant devkit featuresTrainer github smali space svn4idea uiDesigner xpath xslt-debugger javaFX marketplace
 ```
 
 ## Debian安装配置Nvidia
