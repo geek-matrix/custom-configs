@@ -232,3 +232,12 @@ fc-cache -fv
 sudo fc-cache -fsv
 fc-cache -fsv
 ```
+
+## Debian配置fcitx5
+1. 配置fcitx5主题
+```shell
+git clone https://github.com/tonyfettes/fcitx5-nord.git ~/Downloads
+mkdir -p ~/.local/share/fcitx5/themes/
+cp -r ~/Downloads/fcitx5-nord/Nord-Dark/ ~/Downloads/fcitx5-nord/Nord-Light/ ~/.local/share/fcitx5/themes/
+```
+2. [配置JetBrains输入框位置不正确](https://github.com/RikudouPatrickstar/JetBrainsRuntime-for-Linux-x64/releases)
