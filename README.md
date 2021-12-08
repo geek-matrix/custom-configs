@@ -1,16 +1,15 @@
 # 自定义配置
 
 ## Ubuntu初始化
-
 ```shell
 # 基础包安装
-sudo apt install vim curl openssh-server zsh libssl-dev gcc g++ make automake autoconf ibus-rime ninja-build libtool gdb git intel-microcode
+sudo apt install vim curl openssh-server zsh libssl-dev gcc g++ make automake autoconf ninja-build libtool gdb git intel-microcode tcl tk tcl-dev tk-dev fcitx5 fcitx5-pinyin fcitx5-chinese-addons fcitx5-material-color
 
 # 安装字体
 sudo apt install fonts-anonymous-pro fonts-cascadia-code fonts-courier-prime fonts-fantasque-sans fonts-firacode fonts-hack fonts-hermit fonts-inconsolata fonts-jetbrains-mono fonts-mona fonts-monapo fonts-monofur fonts-mononoki fonts-sil-andika fonts-freefont-ttf fonts-opendin fonts-open-sans fonts-gfs-bodoni-classic fonts-ebgaramond fonts-ebgaramond-extra fonts-freefont-ttf fonts-sil-gentium fonts-liberation fonts-liberation2 fonts-junicode fonts-mph-2b-damase fonts-wqy-microhei fonts-wqy-zenhei fonts-arphic-bkai00mp fonts-arphic-bsmi00lp fonts-arphic-gbsn00lp fonts-arphic-gkai00mp fonts-arphic-ukai fonts-arphic-uming fonts-noto-color-emoji fonts-symbola fonts-stix fonts-mathjax fonts-mathjax-extras fonts-powerline
 
 # Debian卸载游戏和libreoffice
-sudo apt remove gnome-2048 aisleriot gnome-calendar cheese gnome-chess gnome-clocks gnome-contacts gnome-documents  evolution five-or-more four-in-a-row hitori gnome-klotski lightsoff gnome-mahjongg gnome-maps gnome-mines gnome-music gnome-nibbles malcontent quadrapassel iagno rhythmbox gnome-robots shotwell gnome-sound-recorder gnome-sudoku swell-foop synaptic tali gnome-taquin gnome-tetravex gnome-todo transmission-common transmission-gtk xterm gnome-weather libreoffice*
+sudo apt remove gnome-2048 aisleriot gnome-calendar cheese gnome-chess gnome-clocks gnome-contacts gnome-documents  evolution five-or-more four-in-a-row hitori gnome-klotski lightsoff gnome-mahjongg gnome-maps gnome-mines gnome-music gnome-nibbles malcontent quadrapassel iagno rhythmbox gnome-robots shotwell gnome-sound-recorder gnome-sudoku swell-foop synaptic tali gnome-taquin gnome-tetravex gnome-todo transmission-common transmission-gtk xterm gnome-weather ibus libreoffice*
 
 sudo apt autoremove
 
@@ -56,7 +55,6 @@ set wildmode=longest:list,full
 ```
 
 ## Linux环境变量配置
-
 ```text
 # vim ~/.profile
 JAVA_HOME=~/.softwares/java/jdk-11.0.13
@@ -73,16 +71,7 @@ PATH=$PATH:$JAVA_HOME/bin:$GOROOT/bin:$SCALA_HOME/bin:$GROOVY_HOME/bin:$NODE_HOM
 export PATH JAVA_HOME GOROOT SCALA_HOME GROOVY_HOME NODE_HOME ANT_HOME M2_HOME GRADLE_HOME VISUALVM JMETER
 ```
 
-## Ubuntu安装git
-
-```shell
-sudo add-apt-repository ppa:git-core/ppa
-sudo apt-get update
-sudo apt-get install git
-```
-
 ## Linux配置oh-my-zsh
-
 ```shell
 git clone git://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
@@ -101,8 +90,7 @@ plugins=(
 setopt nonomatch
 ```
 
-## Ubuntu安装配置wireshark
-
+## Debian安装配置wireshark
 ```shell
 # 安装wireshark
 sudo apt install wireshark
@@ -112,19 +100,25 @@ sudo chmod 4755 /usr/bin/dumpcap
 sudo gpasswd -a ${USER} wireshark
 ```
 
-# Ubuntu安装配置Docker CE
+## Debian通过apt安装docker
+1. [安装Docker CE](https://docs.docker.com/engine/install/debian/)
 
-1. [安装Docker CE](https://docs.docker.com/engine/install/ubuntu)
-2. 配置sudo如下
+## Debian手动安装docker
+1. [安装Docker](https://docs.docker.com/engine/install/binaries/)
+2. 配置systemd
 ```shell
-sudo usermod -aG docker $USER
-sudo systemctl restart docker
-newgrp docker
+tar -zxvf docker-custom-systemd.tar.gz
+sudo cp docker-custom-systemd/* /lib/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable containerd.service
+sudo systemctl enable docker.service
+sudo systemctl enable docker.socket
 ```
-3. [安装docker-compose](https://docs.docker.com/compose/install)
 
-## Ubuntu配置ibus rime
+## Debian安装docker-compose
+1. [安装docker-compose](https://docs.docker.com/compose/install)
 
+## Debian配置ibus rime
 ```yaml
 # vim ~/.config/ibus/rime/default.custom.yaml
 patch:
@@ -151,31 +145,27 @@ patch:
       states: ["。，", "．，"]
 ```
 
-## Ubuntu配置jetbrains
+## Debian配置jetbrains
 
 1. 配置IntelliJ IDEA Ultimate
 
 ```shell
 rm -rf android android-gradle-dsl smali AngularJS devkit less sass space spy-js stylus tslint w3validators xpath xslt-debugger featuresTrainer ant Glassfish Jetty Tomcat weblogicIntegration webSphereIntegration RefactorX JavaScriptDebugger NodeJS JSIntentionPowerPack JSF javaFX uiDesigner FreeMarker haml thymeleaf Velocity lombok github svn4idea vcs-git-featuresTrainer
 ```
-
 2. 配置Clion
 ```shell
 rm -rf coffeescript-core CSS github htmltools JavaScriptDebugger JavaScriptLanguage JSIntentionPowerPack less PerforceIntegration sass stylus svn4idea tslint xpath
 ```
-
 3. 配置Goland
 ```shell
 rm -rf htmltools RefactorX JavaScriptDebugger JavaScriptLanguage JSIntentionPowerPack/ tslint CSS github featuresTrainer
 ```
-
 4. 配置idea community
 ```shell
 rm -rf android android-gradle-dsl ant devkit featuresTrainer github smali space svn4idea uiDesigner xpath xslt-debugger javaFX marketplace
 ```
 
 ## Debian安装配置Nvidia
-
 1. 关闭nouveau
 
 ```shell
@@ -190,15 +180,11 @@ alias lbm-nouveau off
 sudo update-initramfs -u
 sudo reboot
 ```
-
 2. 安装Nvidia闭源
-
 ```shell
 sudo apt install nvidia-driver firmware-misc-nonfree nvidia-kernel-dkms nvidia-xconfig
 ```
-
 3. 配置xorg
-
 ```shell
 # sudo vim /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
 Section "OutputClass"
@@ -217,20 +203,16 @@ Section "OutputClass"
     ModulePath "/usr/lib/xorg/modules"
 EndSection
 ```
-
 5. 配置GDM
 ```shell
 # vim ~/.xinitrc
-
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 xrandr --dpi 96
 ```
-
 ```shell
 # 两个文件内容相同
-# sudo vim /usr/share/gdm/greeter/autostart/optimus.desktop
-# sudo vim /etc/xdg/autostart/optimus.desktop
+sudo vim /usr/share/gdm/greeter/autostart/optimus.desktop
 
 [Desktop Entry]
 Type=Application
@@ -238,4 +220,15 @@ Name=Optimus
 Exec=sh -c "xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"
 NoDisplay=true
 X-GNOME-Autostart-Phase=DisplayServer
+
+sudo cp /usr/share/gdm/greeter/autostart/optimus.desktop /etc/xdg/autostart/optimus.desktop
+```
+## Debian安装字体
+```shell
+# 安装Source Source Code
+sudo tar -zxvf adobe-source-code-pro.tar.gz -C /usr/share/fonts/truetype
+# 刷新字体缓存
+fc-cache -fv
+sudo fc-cache -fsv
+fc-cache -fsv
 ```
