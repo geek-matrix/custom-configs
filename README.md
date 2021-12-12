@@ -236,7 +236,7 @@ fc-cache -fsv
 ## Debian配置fcitx5
 1. 配置fcitx5主题
 ```shell
-git clone https://github.com/tonyfettes/fcitx5-nord.git ~/Downloads
+git clone https://github.com/tonyfettes/fcitx5-nord.git ~/Downloads/fcitx5-nord
 mkdir -p ~/.local/share/fcitx5/themes/
 cp -r ~/Downloads/fcitx5-nord/Nord-Dark/ ~/Downloads/fcitx5-nord/Nord-Light/ ~/.local/share/fcitx5/themes/
 ```
