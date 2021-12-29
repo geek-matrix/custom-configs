@@ -57,6 +57,10 @@ set wildmode=longest:list,full
 ## Linux环境变量配置
 ```text
 # vim ~/.profile
+MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man
+INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info
+TEXLIVE=/usr/local/texlive/2021/bin/x86_64-linux
+
 JAVA_HOME=~/.softwares/java/jdk-11.0.13
 GOROOT=~/.softwares/go
 SCALA_HOME=~/.softwares/scala
@@ -67,8 +71,8 @@ M2_HOME=~/.softwares/maven
 GRADLE_HOME=~/.softwares/gradle
 VISUALVM=~/.softwares/visualvm
 JMETER=~/.softwares/jmeter
-PATH=$PATH:$JAVA_HOME/bin:$GOROOT/bin:$SCALA_HOME/bin:$GROOVY_HOME/bin:$NODE_HOME/bin:$ANT_HOME/bin:$M2_HOME/bin:$GRADLE_HOME/bin:$VISUALVM/bin:$JMETER/bin
-export PATH JAVA_HOME GOROOT SCALA_HOME GROOVY_HOME NODE_HOME ANT_HOME M2_HOME GRADLE_HOME VISUALVM JMETER
+PATH=$PATH:$JAVA_HOME/bin:$GOROOT/bin:$SCALA_HOME/bin:$GROOVY_HOME/bin:$NODE_HOME/bin:$ANT_HOME/bin:$M2_HOME/bin:$GRADLE_HOME/bin:$VISUALVM/bin:$JMETER/bin:$MANPATH:$INFOPATH:$TEXLIVE
+export PATH JAVA_HOME GOROOT SCALA_HOME GROOVY_HOME NODE_HOME ANT_HOME M2_HOME GRADLE_HOME VISUALVM JMETER MANPATH INFOPATH TEXLIVE
 ```
 
 ## Linux配置oh-my-zsh
